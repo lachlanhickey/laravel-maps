@@ -33,9 +33,9 @@ class MapsServiceProvider extends BaseServiceProvider
     {
         $this->publishFiles();
 
-        Blade::include('maps::styles', 'mapstyles');
-        Blade::include('maps::scripts', 'mapscripts');
-        Blade::include('maps::index', 'map');
+        Blade::component('maps::styles', 'mapstyles');
+        Blade::component('maps::scripts', 'mapscripts');
+        Blade::component('maps::index', 'map');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'maps');
 
