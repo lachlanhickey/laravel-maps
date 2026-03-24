@@ -33,9 +33,20 @@ class MapsServiceProvider extends BaseServiceProvider
     {
         $this->publishFiles();
 
-        Blade::component('maps::styles', 'mapstyles');
-        Blade::component('maps::scripts', 'mapscripts');
-        Blade::component('maps::index', 'map');
+        Blade::directive('mapstyles', function ($expression) {
+            $expression = $expression ?: '[]';
+            return "<?php echo \$__env->make('maps::styles', array_merge(['service' => config('vendor.maps.default'), 'enabled' => config('vendor.maps.enabled')], {$expression}))->render(); ?>";
+        });
+
+        Blade::directive('mapscripts', function ($expression) {
+            $expression = $expression ?: '[]';
+            return "<?php echo \$__env->make('maps::scripts', array_merge(['service' => config('vendor.maps.default'), 'enabled' => config('vendor.maps.enabled')], {$expression}))->render(); ?>";
+        });
+
+        Blade::directive('map', function ($expression) {
+            $expression = $expression ?: '[]';
+            return "<?php echo \$__env->make('maps::index', array_merge(['service' => config('vendor.maps.default'), 'enabled' => config('vendor.maps.enabled')], {$expression}))->render(); ?>";
+        });
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'maps');
 
