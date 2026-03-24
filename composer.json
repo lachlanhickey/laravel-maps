@@ -1,5 +1,5 @@
 {
-    "name": "gonoware/laravel-maps",
+    "name": "lachlanhickey/laravel-maps",
     "description": "Maps for your Laravel application",
     "keywords": [
         "maps",
@@ -17,10 +17,10 @@
         "mapkit",
         "mapkitjs"
     ],
-    "homepage": "https://gitlab.com/gonoware/laravel-maps",
+    "homepage": "https://github.com/lachlanhickey/laravel-maps",
     "support": {
-        "issues": "https://gitlab.com/gonoware/laravel-maps/issues",
-        "source": "https://gitlab.com/gonoware/laravel-maps"
+        "issues": "https://github.com/lachlanhickey/laravel-maps/issues",
+        "source": "https://github.com/lachlanhickey/laravel-maps"
     },
     "license": "MIT",
     "authors": [
